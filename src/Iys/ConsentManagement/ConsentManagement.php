@@ -86,10 +86,11 @@ class ConsentManagement extends AbstractEndpoint
     /**
      * @param null $source
      * @param null $limit
+     * @param null $after
      * @return HttpResponse
      * @throws \Exception
      */
-    public function getConsentChanges($source = null, $limit = null){
+    public function getConsentChanges($source = null, $limit = null, $after = null){
         $query = http_build_query(get_defined_vars());
         return $this->httpClient->get($this->consentChangesEndpoint.'?'.$query);
     }
